@@ -1,0 +1,28 @@
+server:
+  port: 8001
+
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml     # mybatis配置文件所在目录
+  type-aliases-package: com.weird.springcloud.entities      # 所有Entity别名类所在包
+  mapper-locations:
+    - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
+
+spring:
+  application:
+    name: microspringcloud-dept
+  datasource:
+    url: jdbc:mysql://94.191.65.57:3316/db01
+    username: root
+    password: auv#572
+    type:
+    driver-class-name: com.mysql.jdbc.Driver
+    dbcp2:
+      min-idle: 5
+      initial-size: 5
+      max-total: 5
+      max-wait-millis: 2000
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
