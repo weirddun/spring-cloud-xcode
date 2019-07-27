@@ -3,9 +3,9 @@ server:
 
 mybatis:
   config-location: classpath:mybatis/mybatis.cfg.xml     # mybatis配置文件所在目录
-  type-aliases-package: com.weird.springcloud.entities      # 所有Entity别名类所在包
+  type-aliases-package: com.weird.springcloud.entities   # 所有Entity别名类所在包
   mapper-locations:
-    - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
+    - classpath:mybatis/mapper/**/*.xml                  # mapper映射文件
 
 spring:
   application:
@@ -26,3 +26,12 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:7001/eureka
+  instance:
+    instance-id: microspringclouddept8001
+    prefer-ip-address: true
+
+info:
+  app.name: microservicecloud
+  company.name: Weird
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
